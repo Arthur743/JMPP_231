@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>People</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td><b>Id</b></td>
+                <td><b>Name</b></td>
+                <td><b>Surname</b></td>
+                <td><b>Email</b></td>
+                <form th:action="@{/newUser}">
+                    <td><input type="submit" value="Add"></td>
+                </form>
+            </tr>
+            <th:block th:each="user : ${users}">
+                <tr>
+                    <td th:utext="${user.getId()}"></td>
+                    <td th:utext="${user.getName()}"></td>
+                    <td th:utext="${user.getSurname()}"></td>
+                    <td th:utext="${user.getEmail()}"></td>
+                    <form th:action="@{/{id}(id=${user.getId()})}">
+                        <td><input type="submit" value="Read"></td>
+                    </form>
+                </tr>
+            </th:block>
+        </table>
+    </body>
+</html>

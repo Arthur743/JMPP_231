@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Update user</title>
+    </head>
+    <body>
+        <th:block th:object="${user}">
+            <table>
+                    <form th:method="PATCH" th:action="@{/{id}(id=${user.getId()})}">
+                <tr>
+                    <td>Id:</td>
+                    <td th:text="${user.getId()}"></td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" th:field="*{name}" id="name" /></td>
+                </tr>
+                <tr>
+                    <td>Surname:</td>
+                    <td><input type="text" th:field="*{surname}" id="surname" /></td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td><input type="text" th:field="*{email}" id="email" /></td>
+                </tr>
+                <tr>
+                        <td><input type="submit" value="Save"></td>
+                    </form>
+                    <form th:method="DELETE" th:action="@{/{id}(id=${user.getId()})}">
+                        <td><input type="submit" value="Delete"></td>
+                    </form>
+                </tr>
+            </table>
+        </th:block>
+    </body>
+</html>

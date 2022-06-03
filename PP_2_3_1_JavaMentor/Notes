@@ -1,0 +1,42 @@
+Aksyonova Ekaterina
+Aktuganova Diana
+Akulova Elizaveta
+Andreeva Elina
+Amandosova Faina
+
+                    <form th:method="DELETE" th:action="@{/{id}(id=${user.getId()})}">
+                        <td><input type="submit" value="Delete"></td>
+                    </form>
+
+System.out.println(">>>>>>>>>>>>delete in service works!<<<<<<<<<<<<");
+System.out.println(">>>>>>>>>>>>>>>" + user.toString() + "<<<<<<<<<<<<<<");
+
+                <form method="DELETE" th:action="@{/users}" th:object="${user}">
+                    <td><input type="submit" value="Delete"></td>
+                </form>
+
+<form th:method="PATCH" th:action="@{/{id}(id=${user.getId()})}" th:object="${user}">
+</form>
+
+                <form th:action="@{/{id}(id=${user.getId()})}">
+
+
+                                <tr>
+                                    <td>Id:</td>
+                                    <td th:text="${user.getId()}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Name:</td>
+                                    <td><input type="text" th:field="*{name}" id="name"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Surname:</td>
+                                    <td><input type="text" th:field="*{surname}" id="surname"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Age:</td>
+                                    <td><input type="text" th:field="*{email}"  id="email"/></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="submit" value="Save"></td>
+                                </tr>
